@@ -26,7 +26,7 @@ public class exe9 {
                 System.out.println(n1-n2);
                 break;
             
-            case "*":
+            case "x":
                 System.out.println(n1*n2);
                 break;
             
