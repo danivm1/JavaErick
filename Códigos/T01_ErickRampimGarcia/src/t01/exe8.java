@@ -1,4 +1,4 @@
-package src.t01;
+package t01;
 
 import java.util.Scanner;
 import java.io.IOException;
