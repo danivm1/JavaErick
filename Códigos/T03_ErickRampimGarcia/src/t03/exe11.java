@@ -81,7 +81,8 @@ public class exe11 {
             }
         }
 
-        System.out.println(String.format("%.2f", det));
+        String s = String.format("A determinante é %.2f.", det);
+        System.out.println(s);
 
         sc.close();
     }
