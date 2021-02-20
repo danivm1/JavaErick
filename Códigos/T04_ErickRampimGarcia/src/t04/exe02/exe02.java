@@ -10,33 +10,50 @@ public class exe02 {
         Scanner sc = new Scanner(System.in);
 
         String nome;
-        int idade;
+        int idade = 0;
         String endereco;
-        Pessoa p = new Pessoa();
+        Pessoa p;
         Boolean x;
         String a;
 
         System.out.print("Nome: ");
         nome = sc.nextLine();
-        p.setNome(nome);
+        // p.setNome(nome);
 
         do{
-            x=true;
+            x=false;
             System.out.print("Idade: ");
             a = sc.nextLine();
             try{
                 idade = Integer.parseInt(a);
-                p.setIdade(idade);
+                // p.setIdade(idade);
             }catch(NumberFormatException e){
                 System.out.println("Insira um número inteiro.");
-                x=false;
+                x=true;
             }
         }while(x);
 
         System.out.print("Endereço: ");
         endereco = sc.nextLine();
-        p.setEndereco(endereco);
+        // p.setEndereco(endereco);
 
+        p = new Pessoa(nome, idade, endereco);
+
+        System.out.println(String.format("%s está fazendo aniversário? s/n", p.getNome()));
+        do{
+            a = sc.nextLine();
+            if(a.equals("s")){
+                p.fazAniversario();
+                break;
+            }else if(a.equals("n")){
+                break;
+            }else{
+                System.out.println("Digite apenas 's' para ou 'n' para não.");
+            }
+        }while(true);
+
+
+        p.imprime();
 
         sc.close();
     }
