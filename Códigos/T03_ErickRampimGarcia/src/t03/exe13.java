@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.IOException;
 
 
-public class exe13 {
+public class Exe13 {
     public static void main(String... args) throws IOException, InterruptedException{
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
 

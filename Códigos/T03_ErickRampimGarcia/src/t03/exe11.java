@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.lang.NumberFormatException;
 
-public class exe11 {
+public class Exe11 {
     public static void main(String... args) throws IOException, InterruptedException{
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
 

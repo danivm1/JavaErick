@@ -3,7 +3,7 @@ package t03;
 import java.util.Scanner;
 import java.io.IOException;
 
-public class exe12 {
+public class Exe12 {
     public static double[][] preencheMatriz(int m){
         Scanner sc = new Scanner(System.in);
 

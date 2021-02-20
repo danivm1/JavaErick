@@ -3,7 +3,7 @@ package t04.exe03;
 import java.util.Scanner;
 import java.io.IOException;
 
-public abstract class exe03 {
+public abstract class Exe03 {
     public static void UsaPonto3D(Ponto3D p){
         Scanner sc = new Scanner(System.in);
 

@@ -3,7 +3,7 @@ package t03;
 import java.util.Scanner;
 import java.io.IOException;
 
-public class exe9 {
+public class Exe9 {
     public static void main(String... args) throws IOException, InterruptedException{
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
 

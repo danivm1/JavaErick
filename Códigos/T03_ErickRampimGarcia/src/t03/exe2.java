@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.lang.NumberFormatException;
 
-public class exe2 {
+public class Exe2 {
     public static void main(String... args) throws IOException, InterruptedException, InputMismatchException{
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
 
