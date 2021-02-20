@@ -1,19 +1,21 @@
 package t04.exe09;
 
-import java.util.Scanner;
-import java.io.IOException;
-
 public class Circunferencia {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+    private double r;
 
-        Scanner sc = new Scanner(System.in);
+    public Circunferencia(double r){
+        this.r = r;
+    }
 
-        
+    public double getR(){
+        return this.r;
+    }
 
+    public void setR(double r){
+        this.r = r;
+    }
 
-
-
-        sc.close();
+    public double calculaArea(){
+        return Math.pow(this.r, 2) * 3.14;
     }
 }
