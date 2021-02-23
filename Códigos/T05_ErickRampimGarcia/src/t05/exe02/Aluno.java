@@ -7,7 +7,7 @@ public class Aluno {
     private String matricula;
     private String curso;
     private int periodo;
-    private ArrayList<String> disciplinasMatriculadas;
+    private ArrayList<String> disciplinasMatriculadas = new ArrayList<String>();
     private String endereco;
     private int quantidadeDisciplinasPermitidadas;
 
@@ -18,6 +18,7 @@ public class Aluno {
         this.periodo = periodo;
         this.quantidadeDisciplinasPermitidadas = quantidadeDisciplinasPermitidadas;
         this.endereco = endereco;
+        this.disciplinasMatriculadas.add("Nenhuma disciplina matriculada.");
     }
 
     public String getNome(){
@@ -79,11 +80,38 @@ public class Aluno {
     public String fazMatricula(String disciplina){
         if(this.quantidadeDisciplinasPermitidadas == 0){
             return "Este aluno não pode ser matriculado em nenhuma disciplina, por favor, fale com a secretaria.";
-        }else if(this.disciplinasMatriculadas.size() == this.quantidadeDisciplinasPermitidadas){
+        }else if(this.disciplinasMatriculadas.size() == this.quantidadeDisciplinasPermitidadas && !this.disciplinasMatriculadas.get(0).equals("Nenhuma disciplina matriculada.")){
             return String.format("Quantidade de disciplinas excedida. O limite de disciplinas para este aluno é de %d disciplina(s). Se desejar, cancele a matrícula de uma das disciplinas e faça a nova matrícula.", this.quantidadeDisciplinasPermitidadas);
         }else{
+            if(this.disciplinasMatriculadas.get(0).equals("Nenhuma disciplina matriculada.")){
+                disciplinasMatriculadas.remove(0);
+            }
             this.disciplinasMatriculadas.add(disciplina);
             return String.format("Matrícula na disciplina %s executada.", disciplina);
         }
+    }
+
+    public String cancelaMatricula(String disciplina){
+        for(int i=0; i<this.quantidadeDisciplinasPermitidadas; i++){
+            if(this.disciplinasMatriculadas.get(i).equals(disciplina)){
+                this.disciplinasMatriculadas.remove(i);
+                return String.format("Cancelamento da matrícula da disciplina %s executado com sucesso.", disciplina);
+            }
+        }
+        return String.format("Aluno não está matriculado na disciplina %s,portanto não é possível cancelar esta matrícula.", disciplina);
+    }
+
+    public String listaDisciplinasAluno(){
+        String disc = disciplinasMatriculadas.get(0);
+        for(int i=1; i<disciplinasMatriculadas.size(); i++){
+            disc += "; " + disciplinasMatriculadas.get(i);
+        }
+        return disc;
+    }
+
+    public String imprime(){
+        String disc = listaDisciplinasAluno();
+        String s = String.format("Nome do aluno: %s\nMatricula: %s\nCurso: %s\nPeriodo: %d\nDisciplinas matriculadas: %s\n", nome, matricula, curso, periodo, disc);
+        return s;
     }
 }
