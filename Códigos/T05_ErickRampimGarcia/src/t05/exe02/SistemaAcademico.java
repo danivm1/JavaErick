@@ -47,7 +47,7 @@ public class SistemaAcademico {
         String disc;
         try{
             alunos.get(0).getNome();
-        }catch(NullPointerException e){
+        }catch(IndexOutOfBoundsException e){
             return "Nenhum aluno cadastrado";
         }
         for(int i=0; i<alunos.size(); i++){
@@ -65,7 +65,7 @@ public class SistemaAcademico {
         
         boolean repetir = true;
         do{
-            System.out.println("Escolha uma operação:\n1 - Cadastrar Aluno\n2 - Excluir aluno por nome\n3 - Listar Alunos\n4 - Matricular Aluno em Disciplina\n5 - Cancelar Matricula\n6 - Imprimir Lista de Alunos e Disciplinas Matriculadas\n7 - Para finalizar");
+            System.out.println("\nEscolha uma operação:\n1 - Cadastrar Aluno\n2 - Excluir aluno por nome\n3 - Listar Alunos\n4 - Matricular Aluno em Disciplina\n5 - Cancelar Matricula\n6 - Imprimir Lista de Alunos e Disciplinas Matriculadas\n7 - Para finalizar");
             int operacao;
             do{
                 String sOperacao = sc.next();
@@ -83,7 +83,7 @@ public class SistemaAcademico {
 
             switch(operacao){
                 case 1:
-                    System.out.println("Cadastrar aluno");
+                    System.out.println("\nCadastrar aluno");
 
                     System.out.print("nome: ");
                     String nome = sc.next();
@@ -128,14 +128,14 @@ public class SistemaAcademico {
                     break;
                 
                 case 2:
-                    System.out.print("Deletar aluno\nInsira o nome:");
+                    System.out.print("\nDeletar aluno\nInsira o nome:");
                     String nomeAluno = sc.next();
                     excluirAlunoPorNome(nomeAluno);
 
                     break;
 
                 case 3:
-                    System.out.println("Lista de alunos:");
+                    System.out.println("\nLista de alunos:");
                     String[] listaAlunos = listarAlunos();
 
                     for(int i=0; i<alunos.size(); i++){
@@ -145,7 +145,7 @@ public class SistemaAcademico {
                     break;
                 
                 case 4:
-                    System.out.println("Matricular aluno em diciplina");
+                    System.out.println("\nMatricular aluno em diciplina");
 
                     System.out.print("Nome do aluno:");
                     int cont=0;
@@ -166,7 +166,7 @@ public class SistemaAcademico {
                     break;
 
                 case 5:
-                    System.out.println("Cancelar matricula de disciplina:");
+                    System.out.println("\nCancelar matricula de disciplina:");
 
                     System.out.print("Nome do aluno:");
                     cont=0;
@@ -188,7 +188,7 @@ public class SistemaAcademico {
                     break;
                 
                 case 6:
-                    System.out.println("Lista de alunos e suas disciplinas:");
+                    System.out.println("\nLista de alunos e suas disciplinas:");
                     System.out.println(imprimirListaDeAlunoseDisciplinas());
 
                     break;
