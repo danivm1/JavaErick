@@ -1,13 +1,11 @@
 package t02;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class exe13 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //Limpar tela
+public class Fibonacci {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 

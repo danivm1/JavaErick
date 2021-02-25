@@ -1,11 +1,9 @@
 package t05.exe08;
 
-import java.io.IOException;
 import java.util.Scanner;
 
-public class Exe08 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+public class ConversorTemperatura {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 

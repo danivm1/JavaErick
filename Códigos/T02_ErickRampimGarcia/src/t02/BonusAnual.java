@@ -1,11 +1,9 @@
 package t02;
 
 import java.util.Scanner;
-import java.io.IOException;
 
-public class exe11 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //Limpar tela
+public class BonusAnual {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 

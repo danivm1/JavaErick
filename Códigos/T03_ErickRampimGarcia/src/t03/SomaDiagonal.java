@@ -1,9 +1,8 @@
 package t03;
 
 import java.util.Scanner;
-import java.io.IOException;
 
-public class Exe12 {
+public class SomaDiagonal {
     public static double[][] preencheMatriz(int m){
         Scanner sc = new Scanner(System.in);
 
@@ -42,8 +41,7 @@ public class Exe12 {
         return s;
     }
 
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 

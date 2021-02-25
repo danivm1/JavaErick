@@ -1,7 +1,6 @@
 package t05.exe02;
 
 import java.util.Scanner;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class SistemaAcademico {
@@ -44,15 +43,13 @@ public class SistemaAcademico {
 
     public static String imprimirListaDeAlunoseDisciplinas(){
         String lista = "";
-        String disc;
         try{
             alunos.get(0).getNome();
         }catch(IndexOutOfBoundsException e){
             return "Nenhum aluno cadastrado";
         }
         for(int i=0; i<alunos.size(); i++){
-            disc = alunos.get(i).listaDisciplinasAluno();
-            lista += "\n" + alunos.get(i).getNome() + ": " + disc;
+            lista += "\n" + alunos.get(i).imprime();
         }
 
         return lista;
@@ -60,15 +57,14 @@ public class SistemaAcademico {
 
 
 
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+    public static void main(String args[]){
         
         boolean repetir = true;
         do{
             System.out.println("\nEscolha uma operação:\n1 - Cadastrar Aluno\n2 - Excluir aluno por nome\n3 - Listar Alunos\n4 - Matricular Aluno em Disciplina\n5 - Cancelar Matricula\n6 - Imprimir Lista de Alunos e Disciplinas Matriculadas\n7 - Para finalizar");
             int operacao;
             do{
-                String sOperacao = sc.next();
+                String sOperacao = sc.nextLine();
                 try{
                     operacao = Integer.parseInt(sOperacao);
                     if(operacao<1 || operacao>7){
@@ -85,19 +81,19 @@ public class SistemaAcademico {
                 case 1:
                     System.out.println("\nCadastrar aluno");
 
-                    System.out.print("nome: ");
-                    String nome = sc.next();
+                    System.out.print("Nome: ");
+                    String nome = sc.nextLine();
 
-                    System.out.print("matricula: ");
-                    String matricula = sc.next();
+                    System.out.print("Matricula: ");
+                    String matricula = sc.nextLine();
 
-                    System.out.print("curso: ");
-                    String curso = sc.next();
+                    System.out.print("Curso: ");
+                    String curso = sc.nextLine();
 
-                    System.out.print("periodo: ");
+                    System.out.print("Periodo: ");
                     int periodo;
                     do{
-                        String sPeriodo = sc.next();
+                        String sPeriodo = sc.nextLine();
                         try{
                             periodo = Integer.parseInt(sPeriodo);
                             break;
@@ -106,13 +102,13 @@ public class SistemaAcademico {
                         }
                     }while(true);
                 
-                    System.out.print("endereco: ");
-                    String endereco = sc.next();
+                    System.out.print("Endereco: ");
+                    String endereco = sc.nextLine();
                 
-                    System.out.print("quantidadedisciplinas: ");
+                    System.out.print("Quantidade de disciplinas: ");
                     int qntDisc;
                     do{
-                        String sQntDisc = sc.next();
+                        String sQntDisc = sc.nextLine();
                         try{
                             qntDisc = Integer.parseInt(sQntDisc);
                             break;
@@ -129,7 +125,7 @@ public class SistemaAcademico {
                 
                 case 2:
                     System.out.print("\nDeletar aluno\nInsira o nome:");
-                    String nomeAluno = sc.next();
+                    String nomeAluno = sc.nextLine();
                     excluirAlunoPorNome(nomeAluno);
 
                     break;
@@ -149,11 +145,11 @@ public class SistemaAcademico {
 
                     System.out.print("Nome do aluno:");
                     int cont=0;
-                    nomeAluno = sc.next();
+                    nomeAluno = sc.nextLine();
                     for(int i=0; i<alunos.size(); i++){
                         if(alunos.get(i).getNome().equals(nomeAluno)){
                             System.out.print("Nome da disciplina:");
-                            String nomeDisciplina = sc.next();
+                            String nomeDisciplina = sc.nextLine();
 
                             System.out.println(matricularAlunoEmDisciplina(alunos.get(i), nomeDisciplina));
                             cont++;
@@ -170,11 +166,11 @@ public class SistemaAcademico {
 
                     System.out.print("Nome do aluno:");
                     cont=0;
-                    nomeAluno = sc.next();
+                    nomeAluno = sc.nextLine();
                     for(int i=0; i<alunos.size(); i++){
                         if(alunos.get(i).getNome().equals(nomeAluno)){
                             System.out.print("Nome da disciplina:");
-                            String nomeDisciplina = sc.next();
+                            String nomeDisciplina = sc.nextLine();
 
                             System.out.println(cancelarMatricula(alunos.get(i), nomeDisciplina));
                             cont++;

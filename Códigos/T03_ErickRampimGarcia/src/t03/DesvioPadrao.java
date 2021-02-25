@@ -1,18 +1,18 @@
 package t03;
 
 import java.util.Scanner;
-import java.io.IOException;
 
 
-public class Exe13 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+public class DesvioPadrao {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 
         String a;
         int n=0;
         boolean b;
+
+        System.out.print("Insira o número de amostras: ");
 
         do{
             a = sc.nextLine();
@@ -31,6 +31,8 @@ public class Exe13 {
         }while(b);
 
         double[] amostras = new double[n];
+
+        System.out.println("\nInsira os valores das amostras:");
 
         for(int i=0; i<n; i++){
             a = sc.nextLine();

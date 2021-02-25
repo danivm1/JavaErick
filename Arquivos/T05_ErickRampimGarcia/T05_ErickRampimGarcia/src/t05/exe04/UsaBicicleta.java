@@ -1,11 +1,9 @@
 package t05.exe04;
 
-import java.io.IOException;
 import java.util.Scanner;
 
-public class Exe04 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+public class UsaBicicleta {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 

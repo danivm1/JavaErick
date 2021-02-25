@@ -2,16 +2,16 @@ package t03;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.io.IOException;
 import java.lang.NumberFormatException;
 
-public class Exe3 {
-    public static void main(String... args) throws IOException, InterruptedException, InputMismatchException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+public class SomaPar {
+    public static void main(String args[]) throws InputMismatchException{
 
         int vetor[] = new int[20];
         Scanner sc = new Scanner(System.in);
         String a;
+
+        System.out.println("Insira 20 números:");
 
         for(int i=0; i<20; i++){
             a = sc.nextLine();

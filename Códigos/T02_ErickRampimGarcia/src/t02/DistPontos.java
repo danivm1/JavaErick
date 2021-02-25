@@ -1,14 +1,12 @@
 package t02;
 
-import java.io.IOException;
 import java.util.Scanner;
 import java.lang.Math;
 
 
 
-public class exe8 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //Limpar tela
+public class DistPontos {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 

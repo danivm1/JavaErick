@@ -1,12 +1,9 @@
 package t03;
 
 import java.util.Scanner;
-import java.io.IOException;
 
-public class Exe9 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
-
+public class Palindromo {
+    public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Insira uma frase");

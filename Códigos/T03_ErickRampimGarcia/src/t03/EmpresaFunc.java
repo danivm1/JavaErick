@@ -1,12 +1,10 @@
 package t03;
 
 import java.util.Scanner;
-import java.io.IOException;
 import java.lang.NumberFormatException;
 
-public class Exe7 {
-    public static void main(String... args) throws IOException, InterruptedException{
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //limpar tela
+public class EmpresaFunc {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
 
@@ -32,7 +30,7 @@ public class Exe7 {
         
 
         for(int i=0; i<m; i++){
-            System.out.print("Funcionário "+i+"\nNome: ");
+            System.out.print("\nFuncionário "+i+"\nNome: ");
             do{
                 nome[i] = sc.next();
                 if(nome[i].length()<4){
@@ -64,9 +62,11 @@ public class Exe7 {
 
         double mediaSalEmp = soma / m;
 
+        System.out.println(String.format("\nSalarios acima da média %.2f", mediaSalEmp));
+
         for(int i=0; i<m; i++){
             if(salario[i]>mediaSalEmp){
-                String s = String.format("Funcionário: %s\nSalário: %.2f", nome[i], salario[i]);
+                String s = String.format("\nFuncionário: %s\nSalário: %.2f", nome[i], salario[i]);
                 System.out.println(s);
             }
         }

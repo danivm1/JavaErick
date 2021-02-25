@@ -6,12 +6,10 @@
 
 package t02;
 
-import java.io.IOException;
 import java.util.Scanner;
 
-public class exe5 {
-    public static void main(String... arg) throws IOException, InterruptedException {
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); //Limpar tela
+public class Locadora {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in); //Instancia objeto para entrada de dados pelo usuário.
 
