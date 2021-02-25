@@ -1,0 +1,5 @@
+private = exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+        The constructor Ponto3D(double, double, double, String, double) is not visible
+
+
+No caso do "private" ocorreu erro dizendo que os construtores/métodos da classe Ponto3D.java não eram visíveis. Isso ocorre por que o private torna os métodos exclusivos para aquela classe apenas, todavia quando optamos por usar "protected" o problema não ocorre, uma vez que ambos fazem parte do mesmo pacote (package). No caso do public, até mesmo classes de outros pacotes podem acessá-lo.
